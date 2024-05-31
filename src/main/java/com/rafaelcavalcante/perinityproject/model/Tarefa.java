@@ -22,8 +22,8 @@ public class Tarefa {
     private String descricao;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate prazo;
-    private Integer duracaoH;
-    private String status;
+    private int duracao;
+    private boolean finalizada;
     @ManyToOne
     @JoinColumn(name = "departamento_id")
     private Departamento departamento;
