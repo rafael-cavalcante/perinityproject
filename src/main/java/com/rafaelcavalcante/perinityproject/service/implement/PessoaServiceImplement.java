@@ -44,8 +44,13 @@ public class PessoaServiceImplement implements PessoaService {
         if (optionalPessoa.isPresent()) {
             Pessoa pessoaExistente = optionalPessoa.get();
             pessoaExistente.setNome(pessoa.getNome());
-            pessoaExistente.setDepartamento(pessoa.getDepartamento());
-            pessoaExistente.setTarefas(pessoa.getTarefas());
+
+            if(pessoa.getDepartamento() != null){
+                pessoaExistente.setDepartamento(pessoa.getDepartamento());
+            }
+            if(pessoa.getTarefas() != null){
+                pessoaExistente.setTarefas(pessoa.getTarefas());
+            }
 
             return this.pessoaRepository.save(pessoaExistente);
         } else {
