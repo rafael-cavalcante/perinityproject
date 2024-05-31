@@ -29,7 +29,7 @@ public class DepartamentoController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Departamento> atualizarDepartamento(@PathVariable Long id,@RequestBody Departamento departamento) {
+    public ResponseEntity<Departamento> atualizarDepartamento(@PathVariable Long id, @RequestBody Departamento departamento) {
         return ResponseEntity.ok().body(this.departamentoService.atualizarDepartamento(id, departamento));
     }
 
