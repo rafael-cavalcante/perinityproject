@@ -32,7 +32,7 @@ public class TarefaController {
         return ResponseEntity.ok().body(this.tarefaService.finalizarTarefa(id));
     }
 
-    @PutMapping("/pessoaId/alocar/tarefaId")
+    @PutMapping("/{pessoaId}/alocar/{tarefaId}")
     public ResponseEntity<Tarefa> alocarPessoaTarefa(@PathVariable Long pessoaId, @PathVariable Long tarefaId) {
         return ResponseEntity.ok().body(this.tarefaService.alocarPessoaTarefa(pessoaId, tarefaId));
     }
