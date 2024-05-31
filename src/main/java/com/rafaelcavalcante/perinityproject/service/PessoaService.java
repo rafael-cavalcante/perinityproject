@@ -10,7 +10,7 @@ import java.util.List;
 public interface PessoaService {
     Pessoa adicionarPessoa(Pessoa pessoa);
     List<PessoaGastosDTO> listarPessoas();
-    Pessoa atualizarPessoa(Pessoa pessoa, Long id);
+    Pessoa atualizarPessoa(Long id, Pessoa pessoa);
     List<PessoaMediaGastosDTO> buscarPessoaNomePeriodo(String nome, LocalDate dataInicio, LocalDate dataFim);
     void deletarPessoa(Long id);
 }
