@@ -19,7 +19,7 @@ public class DepartamentoController {
     }
 
     @PostMapping
-    public ResponseEntity<Departamento> adicionarDepartamento(Departamento departamento) {
+    public ResponseEntity<Departamento> adicionarDepartamento(@RequestBody Departamento departamento) {
         return ResponseEntity.status(HttpStatus.CREATED).body(this.departamentoService.adicionarDepartamento(departamento));
     }
 
@@ -29,11 +29,11 @@ public class DepartamentoController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Departamento> atualizarDepartamento(@PathVariable Long id,Departamento departamento) {
+    public ResponseEntity<Departamento> atualizarDepartamento(@PathVariable Long id,@RequestBody Departamento departamento) {
         return ResponseEntity.ok().body(this.departamentoService.atualizarDepartamento(id, departamento));
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public void deletarDepartamento(@PathVariable Long id) {
         this.departamentoService.deletarDepartamento(id);
     }
