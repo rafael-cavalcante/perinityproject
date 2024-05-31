@@ -38,7 +38,7 @@ public class PessoaServiceImplement implements PessoaService {
     }
 
     @Override
-    public Pessoa atualizarPessoa(Pessoa pessoa, Long id) {
+    public Pessoa atualizarPessoa(Long id, Pessoa pessoa) {
         Optional<Pessoa> optionalPessoa = this.pessoaRepository.findById(id);
 
         if (optionalPessoa.isPresent()) {
